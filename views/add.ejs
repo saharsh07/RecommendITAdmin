@@ -1,0 +1,54 @@
+<%- include('./partials/headA') %>
+<%- include('./partials/navAdmin') %>
+<br>
+<br>
+<h2 class="secTitle">Add a new product</h2>
+    <hr id="line-long" style="align-self: center;">
+<section  class="main3">
+    
+    <article class="product-wrapperAdd" >
+        <form action="/add" method="POST" class="form-center">
+            <input class="form-text" type="text" name="productName" id="productName" placeholder="Product-name" required>
+            <input type="text" name="pictureLink" placeholder="Url Picture" required>
+            <input type="text" name="promo" placeholder="Promo Code" required>
+            <input type="number" class="full-width" name="price" placeholder= "Price in ₹" required>
+            <textarea name="description" id="description" cols="80" rows="5" placeholder="Write your article here..." required></textarea>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <input type="text" name="shopLink" placeholder="Link-shop">
+            <input type="submit" class="full-width" value="Add Product" height="22px">
+        </form>
+    </article>
+</section>
+
+<section id="eyes">
+    <section class="eye eyeLeft">
+        <section></section>
+    </section>
+
+    <section class="eye eyeRight">
+        <section></section>
+    </section>
+</section>
+
+<section id="randomSec" class="main">
+    <!-- <h2 class="secTitle">Random products</h2> -->
+
+    <section class="random-products">
+        <% randomData.forEach(product => { %>
+            <figure class="random__fig">
+                <a href="/detailsAdmin/<%= product.id %>" target="_blank">
+                    <img class="random__img" src=<%= product.pictureLink %> alt="">
+                </a>
+                <figcaption>
+                    <p>
+                        <%= product.productName %>
+                        <span class="promo"><%=product.promo %></span>
+                    </p>
+                    <p class="price">₹<%= product.price %></p>
+                </figcaption>
+            </figure>
+        <% }) %>
+    </section>
+</section>
+
+<script src="/assets/js/main.js"></script>
