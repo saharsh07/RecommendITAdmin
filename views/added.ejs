@@ -1,0 +1,18 @@
+<%- include('./partials/headA') %>
+<%- include('./partials/navAdmin') %>
+
+ 
+<section id="addedSec">
+    <h3>The product <strong id="productName" style="display: none;"><%= productName %></strong> has been successfully added!</h3>
+    <a href="/admin">Back to the Homepage</a>
+</section>
+
+<script src="/assets/js/main.js">
+</script>
+
+<script>
+    function notify(){
+    notifyMe(document.getElementById("productName").textContent);
+  }
+notify();
+ </script>

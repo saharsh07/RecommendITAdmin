@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--absolute Pfad-->
+</head>
+
+<body style="background-image: url('/assets/9.png');">
+    
+    <div class="container" ">
+        <% if(messages.length>0){%>
+            <div class="alert alert-danger">
+                <%= messages%>
+            </div>
+            <% } %>
+                <form id="login" class="form-login" autocomplete="off" method="POST">
+                    <div class="header">
+                        <h3>ADMIN LOG IN</h3>
+                    </div>
+                    <div class="sep"></div>
+                    <div class="inputs">
+
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" placeholder="Enter username " autofocus required name="username" id="username" />
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" required name="password" id="password" />
+                        <br><br>Not Registered?
+                        <a href="/register">Register here</a> 
+                        <button id="submit" type="submit" value="login">LOG IN</button>
+                    </div>
+                </form>
+    </div>
+</body>
+</html>
