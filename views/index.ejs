@@ -1,0 +1,22 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+<section id="homeSec" class="main">
+    <body onload="askPermission()"></body>
+    <% productData.forEach(product => { %>
+        <figure class="home__fig">
+            <a href="/details/<%= product.id %>" target="_blank">
+                <img class="home__img" src=<%= product.pictureLink %> alt="">
+            </a>
+            <figcaption>
+                <p>
+                    <%= product.productName %>
+                    <span class="promo"><%= product.promo %></span>
+                </p>
+                <p class="price">₹<%= product.price %></p>
+            </figcaption>
+        </figure>
+    <% }) %>
+</section>
+
+<%- include('./partials/footer')%>
