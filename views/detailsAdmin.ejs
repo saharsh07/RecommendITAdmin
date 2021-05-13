@@ -1,0 +1,44 @@
+<%- include('./partials/headA') %>
+<%- include('./partials/navAdmin') %>
+
+<section id="detailsSec" class="main2" >
+    <article class="product-wrapper">
+        <div class="Buttons">
+            <button onclick="toggleHide()" id="editButton">Edit</button>
+            <a onclick="deleteProduct()" id="deleteButton">Delete</a>
+        </div>
+        <figure>
+            <img src="<%= product.pictureLink %>"" alt="" height="400px" width="400px">
+            <figcaption>
+                <h4 class="fig__link"><%= product.productName %>
+                <span class="promo">Promo Code: <%= product.promo %></span>
+                </h4>
+                <p class="price">₹<%= product.price %></p>
+            </figcaption>
+        </figure>
+
+        <h4 class="details-h4">Product Description:</h4>
+        <p class="details-p"><%= product.description %></p>
+        <a class="fig__link" href="<%= product.shopLink %>" target="_blank" id="buyButton">Buy Link</a>
+    </article>
+   <article class="product-wrapper1">
+       <br><br><br>
+       <form id="myForm" class="hide">
+        <input type="text" id="productId" name="productId" value="<%= product.id %>" style="display:none"> 
+        Product Name : <input type="text" id="productName" name="productName" placeholder="Product-name"
+            value="<%= product.productName %>">
+        Picture URL :<input type="text" id="pictureLink" name="pictureLink" placeholder="Url Picture"
+            value="<%= product.pictureLink %>">
+        Promo Code :<input type="text" name="promo" id="promo" placeholder="Promo Code" value="<%= product.promo %>">
+        Price :<input type="number" name="price" id="price" placeholder="Price in ₹" value="<%= product.price %>">
+        Description :<textarea name="description" id="description" cols="30" rows="6"
+            placeholder="Write your article here..."><%= product.description %></textarea>
+
+        Buy Link :<input type="text" name="shopLink" id="shopLink" placeholder="Link-shop"
+            value="<%= product.shopLink %>">
+            
+        <button onclick="edit()" id="update-button" style="width: 66%; background-color: black; color: #007BFF; font-weight: bold;">Edit Product</button>
+    </form>
+</article>
+</section>
+<script src="/assets/js/main.js"></script>
